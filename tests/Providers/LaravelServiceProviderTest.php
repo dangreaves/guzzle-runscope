@@ -24,7 +24,7 @@ class LaravelServiceProviderTest extends TestCase
      */
     public function request_transformer_resolved_with_key_from_params()
     {
-        $transformer = $this->app->makeWith(RequestTransformer::class, ['bucketKey' => 'abc123']);
+        $transformer = $this->app->make(RequestTransformer::class, ['bucketKey' => 'abc123']);
 
         $this->assertEquals('abc123', $transformer->getBucketKey());
     }

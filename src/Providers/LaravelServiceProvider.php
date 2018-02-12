@@ -32,7 +32,7 @@ class LaravelServiceProvider extends ServiceProvider
         $this->app->bind(MiddlewareFactory::class, function ($app, $params) {
 
             return (new MiddlewareFactory(
-                $app->makeWith(RequestTransformer::class, $params),
+                $app->make(RequestTransformer::class, $params),
                 $app->make(Contracts\Decider::class)
             ))->make();
 
